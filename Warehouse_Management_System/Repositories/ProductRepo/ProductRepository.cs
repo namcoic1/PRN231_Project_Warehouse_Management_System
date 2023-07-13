@@ -5,14 +5,16 @@ namespace Repositories.ProductRepo
 {
     public class ProductRepository : IProductRepository
     {
-        public void SaveProduct(Product product) => ProductDAO.GetInstance().SaveProduct(product);
+        public void SaveProduct(Product product) => ProductDAO.GetInstance.SaveProduct(product);
 
-        public void DeleteProduct(Product product) => ProductDAO.GetInstance().DeleteProduct(product);
+        public void DeleteProduct(Product product) => ProductDAO.GetInstance.DeleteProduct(product);
 
-        public Product GetProductById(int id) => ProductDAO.GetInstance().GetProductById(id);
+        public Product GetProductById(int id) => ProductDAO.GetInstance.GetProductById(id);
 
-        public List<Product> GetProducts() => ProductDAO.GetInstance().GetProducts();
+        public Product GetProductByLastId() => ProductDAO.GetInstance.GetProductByLastId();
 
-        public void UpdateProduct(Product product) => ProductDAO.GetInstance().UpdateProduct(product);
+        public List<Product> GetProducts() => ProductDAO.GetInstance.GetProducts();
+
+        public void UpdateProduct(Product product) => ProductDAO.GetInstance.UpdateProduct(product);
     }
 }

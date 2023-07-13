@@ -6,25 +6,34 @@ namespace DataAccess
     public class InventoryDAO
     {
         private static InventoryDAO _instance = null;
-        private InventoryDAO() { }
-        public static InventoryDAO GetInstance()
+        private static MyDbContext _context = null;
+        private InventoryDAO()
         {
-            if (_instance == null)
+        }
+        public static InventoryDAO GetInstance
+        {
+            get
             {
-                _instance = new InventoryDAO();
+                if (_instance == null)
+                {
+                    _instance = new InventoryDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Inventory> GetInventories() => MyDbContext.GetInstance().Inventories.ToList();
-        public Inventory GetInventoryById(string id) => MyDbContext.GetInstance().Inventories.SingleOrDefault(c => c.ID == id);
+        public List<Inventory> GetInventories() => _context.Inventories.Include(l => l.Location).Include(p => p.Product).ToList();
+        public Inventory GetInventoryById(string id) => _context.Inventories.Include(l => l.Location).Include(p => p.Product).SingleOrDefault(c => c.Id.Equals(id));
+        public Inventory GetInventoryByLastId() => _context.Inventories.Include(l => l.Location).Include(p => p.Product).OrderBy(i => i.Id).LastOrDefault();
 
         public void SaveInventory(Inventory inventory)
         {
             try
             {
-                MyDbContext.GetInstance().Inventories.Add(inventory);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Inventories.Add(inventory);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Inventory>(inventory).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Inventory>(inventory).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Inventories.Remove(inventory);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Inventories.Remove(inventory);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

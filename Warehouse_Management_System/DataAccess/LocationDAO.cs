@@ -6,25 +6,34 @@ namespace DataAccess
     public class LocationDAO
     {
         private static LocationDAO _instance = null;
-        private LocationDAO() { }
-        public static LocationDAO GetInstance()
+        private static MyDbContext _context = null;
+        private LocationDAO()
         {
-            if (_instance == null)
+        }
+        public static LocationDAO GetInstance
+        {
+            get
             {
-                _instance = new LocationDAO();
+                if (_instance == null)
+                {
+                    _instance = new LocationDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Location> GetLocations() => MyDbContext.GetInstance().Locations.ToList();
-        public Location GetLocationById(int id) => MyDbContext.GetInstance().Locations.SingleOrDefault(c => c.ID == id);
+        public List<Location> GetLocations() => _context.Locations.Include(u => u.User).ToList();
+        public Location GetLocationById(int id) => _context.Locations.Include(u => u.User).SingleOrDefault(c => c.Id == id);
+        public Location GetLocationByLastId() => _context.Locations.Include(u => u.User).OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveLocation(Location location)
         {
             try
             {
-                MyDbContext.GetInstance().Locations.Add(location);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Locations.Add(location);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Location>(location).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Location>(location).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -44,17 +53,17 @@ namespace DataAccess
             }
         }
         // do not delete location
-        //public void DeleteLocation(Location location)
-        //{
-        //    try
-        //    {
-        //        MyDB_Context.GetInstance().Locations.Remove(location);
-        //        MyDB_Context.GetInstance().SaveChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        public void DeleteLocation(Location location)
+        {
+            try
+            {
+                _context.Locations.Remove(location);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

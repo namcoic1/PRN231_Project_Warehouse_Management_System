@@ -7,7 +7,7 @@ namespace BusinessObjects
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("product_id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Column("category_id")]
         public int? CategoryID { get; set; }
         [Column("supplier_id")]

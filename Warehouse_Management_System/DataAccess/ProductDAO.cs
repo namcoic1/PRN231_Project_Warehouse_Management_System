@@ -6,25 +6,34 @@ namespace DataAccess
     public class ProductDAO
     {
         private static ProductDAO _instance = null;
-        private ProductDAO() { }
-        public static ProductDAO GetInstance()
+        private static MyDbContext _context = null;
+        private ProductDAO()
         {
-            if (_instance == null)
+        }
+        public static ProductDAO GetInstance
+        {
+            get
             {
-                _instance = new ProductDAO();
+                if (_instance == null)
+                {
+                    _instance = new ProductDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Product> GetProducts() => MyDbContext.GetInstance().Products.ToList();
-        public Product GetProductById(int id) => MyDbContext.GetInstance().Products.SingleOrDefault(c => c.ID == id);
+        public List<Product> GetProducts() => _context.Products.Include(c => c.Category).Include(s => s.Supplier).ToList();
+        public Product GetProductById(int id) => _context.Products.Include(c => c.Category).Include(s => s.Supplier).SingleOrDefault(c => c.Id == id);
+        public Product GetProductByLastId() => _context.Products.Include(c => c.Category).Include(s => s.Supplier).OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveProduct(Product product)
         {
             try
             {
-                MyDbContext.GetInstance().Products.Add(product);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Products.Add(product);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Product>(product).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Product>(product).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Products.Remove(product);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Products.Remove(product);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

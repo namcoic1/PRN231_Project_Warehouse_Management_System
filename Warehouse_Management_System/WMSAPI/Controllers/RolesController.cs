@@ -24,15 +24,15 @@ namespace WMSAPI.Controllers
         }
 
         [EnableQuery]
-        public ActionResult<List<RoleResponseDTO>> Get()
+        public ActionResult<List<RoleDTO>> Get()
         {
-            return Ok(Mapper.Map<List<RoleResponseDTO>>(repository.GetRoles()));
+            return Ok(Mapper.Map<List<RoleDTO>>(repository.GetRoles()));
         }
         [EnableQuery]
         //public ActionResult<RoleDTO> Get(int key)
-        public ActionResult<RoleResponseDTO> Get([FromODataUri] int key)
+        public ActionResult<RoleDTO> Get([FromODataUri] int key)
         {
-            var role = Mapper.Map<RoleResponseDTO>(repository.GetRoleById(key));
+            var role = Mapper.Map<RoleDTO>(repository.GetRoleById(key));
 
             if (role == null)
             {
@@ -42,7 +42,7 @@ namespace WMSAPI.Controllers
             return Ok(role);
         }
         [EnableQuery]
-        public IActionResult Post([FromBody] RoleRequestDTO roleRequest)
+        public IActionResult Post([FromBody] RoleDTO roleRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -53,10 +53,10 @@ namespace WMSAPI.Controllers
             repository.SaveRole(role);
 
             //return NoContent();
-            return Ok(roleRequest);
+            return Ok(Mapper.Map<RoleDTO>(repository.GetRoleByLastId()));
         }
         [EnableQuery]
-        public IActionResult Put([FromODataUri] int key, [FromBody] RoleRequestDTO roleRequest)
+        public IActionResult Put([FromODataUri] int key, [FromBody] RoleDTO roleRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -66,14 +66,29 @@ namespace WMSAPI.Controllers
             var _role = repository.GetRoleById(key);
             var role = Mapper.Map<Role>(roleRequest);
 
-            if (_role == null || role.ID != key)
+            if (_role == null || role.Id != key)
             {
                 return new NotFoundResult();
             }
 
             repository.UpdateRole(role);
 
-            return Ok(role);
+            return Ok(Mapper.Map<RoleDTO>(repository.GetRoleById(key)));
+        }
+        [EnableQuery]
+        public IActionResult Delete([FromODataUri] int key)
+        {
+            var role = repository.GetRoleById(key);
+            var roleResponse = Mapper.Map<RoleDTO>(role);
+
+            if (role == null)
+            {
+                return new NotFoundResult();
+            }
+
+            repository.DeleteRole(role);
+
+            return Ok(roleResponse);
         }
     }
 }

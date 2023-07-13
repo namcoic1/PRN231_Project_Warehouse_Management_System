@@ -6,23 +6,27 @@ namespace DataAccess
     public class RoleDAO
     {
         private static RoleDAO _instance = null;
-        private MyDbContext _context;
+        private static MyDbContext _context = null;
         private RoleDAO()
         {
-            //_context = MyDbContext.GetInstance();
-            _context = new MyDbContext();
         }
-        public static RoleDAO GetInstance()
+        public static RoleDAO GetInstance
         {
-            if (_instance == null)
+            get
             {
-                _instance = new RoleDAO();
+                if (_instance == null)
+                {
+                    _instance = new RoleDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
         public List<Role> GetRoles() => _context.Roles.ToList();
-        public Role GetRoleById(int id) => _context.Roles.SingleOrDefault(c => c.ID == id);
+        public Role GetRoleById(int id) => _context.Roles.SingleOrDefault(c => c.Id == id);
+        public Role GetRoleByLastId() => _context.Roles.OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveRole(Role role)
         {
@@ -40,6 +44,7 @@ namespace DataAccess
         {
             try
             {
+                //_context = new MyDbContext();
                 _context.Entry<Role>(role).State = EntityState.Modified;
                 _context.SaveChanges();
             }
@@ -49,17 +54,17 @@ namespace DataAccess
             }
         }
         // do not to delete role
-        //public void DeleteRole(Role role)
-        //{
-        //    try
-        //    {
-        //        MyDB_Context.GetInstance().Roles.Remove(role);
-        //        MyDB_Context.GetInstance().SaveChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        public void DeleteRole(Role role)
+        {
+            try
+            {
+                _context.Roles.Remove(role);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

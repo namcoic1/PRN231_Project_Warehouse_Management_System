@@ -6,25 +6,34 @@ namespace DataAccess
     public class SupplierDAO
     {
         private static SupplierDAO _instance = null;
-        private SupplierDAO() { }
-        public static SupplierDAO GetInstance()
+        private static MyDbContext _context = null;
+        private SupplierDAO()
         {
-            if (_instance == null)
+        }
+        public static SupplierDAO GetInstance
+        {
+            get
             {
-                _instance = new SupplierDAO();
+                if (_instance == null)
+                {
+                    _instance = new SupplierDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Supplier> GetSuppliers() => MyDbContext.GetInstance().Suppliers.ToList();
-        public Supplier GetCategoryById(string id) => MyDbContext.GetInstance().Suppliers.SingleOrDefault(c => c.ID == id);
+        public List<Supplier> GetSuppliers() => _context.Suppliers.ToList();
+        public Supplier GetSupplierById(string id) => _context.Suppliers.SingleOrDefault(c => c.Id.Equals(id));
+        public Supplier GetSupplierByLastId() => _context.Suppliers.OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveSupplier(Supplier supplier)
         {
             try
             {
-                MyDbContext.GetInstance().Suppliers.Add(supplier);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Suppliers.Add(supplier);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Supplier>(supplier).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Supplier>(supplier).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Suppliers.Remove(supplier);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Suppliers.Remove(supplier);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

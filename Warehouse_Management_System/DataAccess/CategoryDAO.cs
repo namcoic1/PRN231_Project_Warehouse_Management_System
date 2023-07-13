@@ -6,25 +6,34 @@ namespace DataAccess
     public class CategoryDAO
     {
         private static CategoryDAO _instance = null;
-        private CategoryDAO() { }
-        public static CategoryDAO GetInstance()
+        private static MyDbContext _context = null;
+        private CategoryDAO()
         {
-            if (_instance == null)
+        }
+        public static CategoryDAO GetInstance
+        {
+            get
             {
-                _instance = new CategoryDAO();
+                if (_instance == null)
+                {
+                    _instance = new CategoryDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Category> GetCategories() => MyDbContext.GetInstance().Categories.ToList();
-        public Category GetCategoryById(int id) => MyDbContext.GetInstance().Categories.SingleOrDefault(c => c.ID == id);
+        public List<Category> GetCategories() => _context.Categories.ToList();
+        public Category GetCategoryById(int id) => _context.Categories.SingleOrDefault(c => c.Id == id);
+        public Category GetCategoryByLastId() => _context.Categories.OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveCategory(Category category)
         {
             try
             {
-                MyDbContext.GetInstance().Categories.Add(category);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Categories.Add(category);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Category>(category).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Category>(category).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Categories.Remove(category);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Categories.Remove(category);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

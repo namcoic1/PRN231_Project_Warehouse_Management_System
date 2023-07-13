@@ -7,26 +7,36 @@ namespace DataAccess
     {
         // static object of carrierdao
         private static CarrierDAO _instance = null;
-        private CarrierDAO() { }
-        // singleton pattern
-        public static CarrierDAO GetInstance()
+        private static MyDbContext _context = null;
+        private CarrierDAO()
         {
-            if (_instance == null)
+        }
+        // singleton pattern
+        public static CarrierDAO GetInstance
+        {
+            get
             {
-                _instance = new CarrierDAO();
+                if (_instance == null)
+                {
+                    _instance = new CarrierDAO();
+                }
+
+                // refresh mydbcontext
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Carrier> GetCarriers() => MyDbContext.GetInstance().Carriers.ToList();
-        public Carrier GetCarrierById(int id) => MyDbContext.GetInstance().Carriers.SingleOrDefault(c => c.ID == id);
+        public List<Carrier> GetCarriers() => _context.Carriers.ToList();
+        public Carrier GetCarrierById(int id) => _context.Carriers.SingleOrDefault(c => c.Id == id);
+        public Carrier GetCarrierByLastId() => _context.Carriers.OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveCarrier(Carrier carrier)
         {
             try
             {
-                MyDbContext.GetInstance().Carriers.Add(carrier);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Carriers.Add(carrier);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -37,8 +47,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Carrier>(carrier).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Carrier>(carrier).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -49,8 +59,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Carriers.Remove(carrier);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Carriers.Remove(carrier);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

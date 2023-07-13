@@ -24,12 +24,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Carrier", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("carrier_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)")
@@ -53,19 +53,19 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("status");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Carriers");
                 });
 
             modelBuilder.Entity("BusinessObjects.Category", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("category_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime2")
@@ -80,14 +80,14 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("status");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("BusinessObjects.Customer", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("customer_id");
 
@@ -118,14 +118,14 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("status");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("BusinessObjects.Inventory", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("inventory_id");
 
@@ -153,7 +153,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("status");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("LocationID");
 
@@ -164,12 +164,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Location", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("location_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)")
@@ -202,7 +202,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserID")
                         .IsUnique()
@@ -213,12 +213,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Product", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("product_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("CategoryID")
                         .HasColumnType("int")
@@ -250,7 +250,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("supplier_id");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("CategoryID");
 
@@ -261,12 +261,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Report", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("report_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)")
@@ -298,7 +298,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("TransactionID");
 
@@ -309,12 +309,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Role", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("role_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime2")
@@ -325,14 +325,14 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("name");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("BusinessObjects.Supplier", b =>
                 {
-                    b.Property<string>("ID")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("supplier_id");
 
@@ -363,19 +363,19 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("status");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("BusinessObjects.Transaction", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("transaction_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)")
@@ -431,7 +431,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("CarrierID");
 
@@ -450,12 +450,12 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.User", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)")
@@ -512,7 +512,7 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("title");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("ReportsTo");
 

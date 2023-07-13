@@ -5,20 +5,29 @@ namespace BusinessObjects
 {
     public class MyDbContext : DbContext
     {
-        // static object of mydbcontext
+        //// static object of mydbcontext
         //private static MyDbContext _instance = null;
+        //// safety object 
+        //private static readonly object instanceLock = new object();
+        //private MyDbContext() { }
         public MyDbContext() { }
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
-        // singleton pattern
-        //public static MyDbContext GetInstance()
+        //// singleton pattern
+        //public static MyDbContext GetInstance
         //{
-        //    if (_instance == null)
+        //    get
         //    {
-        //        _instance = new MyDbContext();
+        //        lock (instanceLock)
+        //        {
+        //            if (_instance == null)
+        //            {
+        //                _instance = new MyDbContext();
+        //            }
+        //            return _instance;
+        //        }
         //    }
-        //    return _instance;
         //}
 
         public virtual DbSet<Role> Roles { get; set; }

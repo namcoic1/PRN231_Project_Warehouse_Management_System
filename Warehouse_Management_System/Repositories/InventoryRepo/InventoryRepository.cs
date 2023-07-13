@@ -5,14 +5,16 @@ namespace Repositories.InventoryRepo
 {
     public class InventoryRepository : IInventoryRepository
     {
-        public void SaveInventory(Inventory inventory) => InventoryDAO.GetInstance().SaveInventory(inventory);
+        public void SaveInventory(Inventory inventory) => InventoryDAO.GetInstance.SaveInventory(inventory);
 
-        public void DeleteInventory(Inventory inventory) => InventoryDAO.GetInstance().DeleteInventory(inventory);
+        public void DeleteInventory(Inventory inventory) => InventoryDAO.GetInstance.DeleteInventory(inventory);
 
-        public Inventory GetInventoryById(string id) => InventoryDAO.GetInstance().GetInventoryById(id);
+        public Inventory GetInventoryById(string id) => InventoryDAO.GetInstance.GetInventoryById(id);
 
-        public List<Inventory> GetInventories() => InventoryDAO.GetInstance().GetInventories();
+        public Inventory GetInventoryByLastId() => InventoryDAO.GetInstance.GetInventoryByLastId();
 
-        public void UpdateInventory(Inventory inventory) => InventoryDAO.GetInstance().UpdateInventory(inventory);
+        public List<Inventory> GetInventories() => InventoryDAO.GetInstance.GetInventories();
+
+        public void UpdateInventory(Inventory inventory) => InventoryDAO.GetInstance.UpdateInventory(inventory);
     }
 }

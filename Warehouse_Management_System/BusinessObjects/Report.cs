@@ -7,7 +7,7 @@ namespace BusinessObjects
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("report_id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Column("user_id")]
         public int? UserID { get; set; }
         [Column("transaction_id")]

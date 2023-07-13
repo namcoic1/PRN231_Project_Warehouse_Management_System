@@ -4,12 +4,22 @@ using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 using WarehouseMSAPI.DTO;
 using WarehouseMSAPI.Mapper;
+using WMSAPI.DTO;
 
 static IEdmModel GetEdmModel()
 {
     ODataConventionModelBuilder builder = new();
-    builder.EntitySet<RoleResponseDTO>("Roles");
-    //builder.EntitySet<RoleDTO>("Role");
+    builder.EntitySet<RoleDTO>("Roles");
+    builder.EntitySet<CategoryDTO>("Categories");
+    builder.EntitySet<SupplierDTO>("Suppliers");
+    builder.EntitySet<CustomerDTO>("Customers");
+    builder.EntitySet<CarrierDTO>("Carriers");
+    builder.EntitySet<LocationDTO>("Locations");
+    builder.EntitySet<UserDTO>("Users");
+    builder.EntitySet<ProductDTO>("Products");
+    builder.EntitySet<InventoryDTO>("Inventories");
+    builder.EntitySet<TransactionDTO>("Transactions");
+    builder.EntitySet<ReportDTO>("Reports");
     return builder.GetEdmModel();
 }
 
@@ -19,6 +29,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+//builder.Services.AddDbContext<MyDbContext>(options =>
+//{
+//    //options.UseSqlServer(new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("Database"));
+//    //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+//    //options.UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
+//});
 //builder.Services.AddDbContext<MyDbContext>();
 //builder.Services.AddScoped<MyDbContext>();
 

@@ -6,25 +6,36 @@ namespace DataAccess
     public class TransactionDAO
     {
         private static TransactionDAO _instance = null;
-        private TransactionDAO() { }
-        public static TransactionDAO GetInstance()
+        private static MyDbContext _context = null;
+        private TransactionDAO()
         {
-            if (_instance == null)
+        }
+        public static TransactionDAO GetInstance
+        {
+            get
             {
-                _instance = new TransactionDAO();
+                if (_instance == null)
+                {
+                    _instance = new TransactionDAO();
+                }
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Transaction> GetTransactions() => MyDbContext.GetInstance().Transactions.ToList();
-        public Transaction GetTransactionById(int id) => MyDbContext.GetInstance().Transactions.SingleOrDefault(c => c.ID == id);
+        public List<Transaction> GetTransactions() => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
+            .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).ToList();
+        public Transaction GetTransactionById(int id) => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
+            .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).SingleOrDefault(c => c.Id == id);
+        public Transaction GetTransactionByLastId() => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
+            .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveTransaction(Transaction transaction)
         {
             try
             {
-                MyDbContext.GetInstance().Transactions.Add(transaction);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Transactions.Add(transaction);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +46,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Transaction>(transaction).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Transaction>(transaction).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +58,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Transactions.Remove(transaction);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Transactions.Remove(transaction);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

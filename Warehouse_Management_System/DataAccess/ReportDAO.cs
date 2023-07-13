@@ -6,25 +6,41 @@ namespace DataAccess
     public class ReportDAO
     {
         private static ReportDAO _instance = null;
-        private ReportDAO() { }
-        public static ReportDAO GetInstance()
+        private static MyDbContext _context = null;
+        private ReportDAO()
         {
-            if (_instance == null)
+        }
+        public static ReportDAO GetInstance
+        {
+            get
             {
-                _instance = new ReportDAO();
+                if (_instance == null)
+                {
+                    _instance = new ReportDAO();
+                }
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Report> GetReports() => MyDbContext.GetInstance().Reports.ToList();
-        public Report GetReportById(int id) => MyDbContext.GetInstance().Reports.SingleOrDefault(c => c.ID == id);
+        public List<Report> GetReports() => _context.Reports.Include(c => c.User).Include(c => c.Transaction)
+            //.ThenInclude(c => c.Customer)
+            //.Include(c => c.Transaction).ThenInclude(c => c.Carrier)
+            //.Include(c => c.Transaction).ThenInclude(c => c.Supplier)
+            //.Include(c => c.Transaction).ThenInclude(c => c.Location)
+            //.Include(c => c.Transaction).ThenInclude(c => c.Product)
+            .ToList();
+        public Report GetReportById(int id) => _context.Reports.Include(c => c.User).Include(c => c.Transaction)
+            .SingleOrDefault(c => c.Id == id);
+        public Report GetReportByLastId() => _context.Reports.Include(c => c.User).Include(c => c.Transaction)
+            .OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveReport(Report report)
         {
             try
             {
-                MyDbContext.GetInstance().Reports.Add(report);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Reports.Add(report);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +51,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Report>(report).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Report>(report).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +63,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Reports.Remove(report);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Reports.Remove(report);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

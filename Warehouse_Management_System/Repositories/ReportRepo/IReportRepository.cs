@@ -6,6 +6,7 @@ namespace Repositories.ReportRepo
     {
         List<Report> GetReports();
         Report GetReportById(int id);
+        Report GetReportByLastId();
         void SaveReport(Report report);
         void UpdateReport(Report report);
         void DeleteReport(Report report);

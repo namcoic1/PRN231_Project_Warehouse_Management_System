@@ -7,7 +7,7 @@ namespace BusinessObjects
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("role_id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Column("name")]
         [StringLength(50)]
         public string? Name { get; set; }

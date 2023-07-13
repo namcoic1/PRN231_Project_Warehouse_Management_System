@@ -198,8 +198,7 @@ namespace BusinessObjects.Migrations
                         name: "FK_Inventories_Locations_location_id",
                         column: x => x.location_id,
                         principalTable: "Locations",
-                        principalColumn: "location_id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "location_id");
                     table.ForeignKey(
                         name: "FK_Inventories_Products_product_id",
                         column: x => x.product_id,

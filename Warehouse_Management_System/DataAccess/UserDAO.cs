@@ -6,25 +6,34 @@ namespace DataAccess
     public class UserDAO
     {
         private static UserDAO _instance = null;
-        private UserDAO() { }
-        public static UserDAO GetInstance()
+        private static MyDbContext _context = null;
+        private UserDAO()
         {
-            if (_instance == null)
+        }
+        public static UserDAO GetInstance
+        {
+            get
             {
-                _instance = new UserDAO();
+                if (_instance == null)
+                {
+                    _instance = new UserDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<User> GetUsers() => MyDbContext.GetInstance().Users.ToList();
-        public User GetUserById(int id) => MyDbContext.GetInstance().Users.SingleOrDefault(c => c.ID == id);
+        public List<User> GetUsers() => _context.Users.Include(r => r.Role).Include(l => l.Location).Include(u => u.Manager).ToList();
+        public User GetUserById(int id) => _context.Users.Include(r => r.Role).Include(l => l.Location).Include(u => u.Manager).SingleOrDefault(c => c.Id == id);
+        public User GetUserByLastId() => _context.Users.Include(r => r.Role).Include(l => l.Location).Include(u => u.Manager).OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveUser(User User)
         {
             try
             {
-                MyDbContext.GetInstance().Users.Add(User);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Users.Add(User);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<User>(user).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<User>(user).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Users.Remove(user);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Users.Remove(user);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

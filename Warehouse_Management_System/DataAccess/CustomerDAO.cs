@@ -6,25 +6,34 @@ namespace DataAccess
     public class CustomerDAO
     {
         private static CustomerDAO _instance = null;
-        private CustomerDAO() { }
-        public static CustomerDAO GetInstance()
+        private static MyDbContext _context = null;
+        private CustomerDAO()
         {
-            if (_instance == null)
+        }
+        public static CustomerDAO GetInstance
+        {
+            get
             {
-                _instance = new CustomerDAO();
+                if (_instance == null)
+                {
+                    _instance = new CustomerDAO();
+                }
+
+                _context = new MyDbContext();
+                return _instance;
             }
-            return _instance;
         }
 
-        public List<Customer> GetCustomers() => MyDbContext.GetInstance().Customers.ToList();
-        public Customer GetCustomerById(string id) => MyDbContext.GetInstance().Customers.SingleOrDefault(c => c.ID == id);
+        public List<Customer> GetCustomers() => _context.Customers.ToList();
+        public Customer GetCustomerById(string id) => _context.Customers.SingleOrDefault(c => c.Id.Equals(id));
+        public Customer GetCustomerByLastId() => _context.Customers.OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveCustomer(Customer customer)
         {
             try
             {
-                MyDbContext.GetInstance().Customers.Add(customer);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Customers.Add(customer);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -35,8 +44,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Entry<Customer>(customer).State = EntityState.Modified;
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Entry<Customer>(customer).State = EntityState.Modified;
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -47,8 +56,8 @@ namespace DataAccess
         {
             try
             {
-                MyDbContext.GetInstance().Customers.Remove(customer);
-                MyDbContext.GetInstance().SaveChanges();
+                _context.Customers.Remove(customer);
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {

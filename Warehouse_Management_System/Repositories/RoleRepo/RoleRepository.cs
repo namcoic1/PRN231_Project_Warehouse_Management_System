@@ -5,14 +5,16 @@ namespace Repositories.RoleRepo
 {
     public class RoleRepository : IRoleRepository
     {
-        public void SaveRole(Role role) => RoleDAO.GetInstance().SaveRole(role);
+        public void SaveRole(Role role) => RoleDAO.GetInstance.SaveRole(role);
 
-        //public void DeleteRole(Role role) => RoleDAO.GetInstance().DeleteRole(role);
+        public void DeleteRole(Role role) => RoleDAO.GetInstance.DeleteRole(role);
 
-        public Role GetRoleById(int id) => RoleDAO.GetInstance().GetRoleById(id);
+        public Role GetRoleById(int id) => RoleDAO.GetInstance.GetRoleById(id);
 
-        public List<Role> GetRoles() => RoleDAO.GetInstance().GetRoles();
+        public Role GetRoleByLastId() => RoleDAO.GetInstance.GetRoleByLastId();
 
-        public void UpdateRole(Role role) => RoleDAO.GetInstance().UpdateRole(role);
+        public List<Role> GetRoles() => RoleDAO.GetInstance.GetRoles();
+
+        public void UpdateRole(Role role) => RoleDAO.GetInstance.UpdateRole(role);
     }
 }

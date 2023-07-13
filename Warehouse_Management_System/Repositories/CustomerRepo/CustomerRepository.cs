@@ -5,14 +5,16 @@ namespace Repositories.CustomerRepo
 {
     public class CustomerRepository : ICustomerRepository
     {
-        public void SaveCustomer(Customer customer) => CustomerDAO.GetInstance().SaveCustomer(customer);
+        public void SaveCustomer(Customer customer) => CustomerDAO.GetInstance.SaveCustomer(customer);
 
-        public void DeleteCustomer(Customer customer) => CustomerDAO.GetInstance().DeleteCustomer(customer);
+        public void DeleteCustomer(Customer customer) => CustomerDAO.GetInstance.DeleteCustomer(customer);
 
-        public Customer GetCustomerById(string id) => CustomerDAO.GetInstance().GetCustomerById(id);
+        public Customer GetCustomerById(string id) => CustomerDAO.GetInstance.GetCustomerById(id);
 
-        public List<Customer> GetCustomers() => CustomerDAO.GetInstance().GetCustomers();
+        public Customer GetCustomerByLastId() => CustomerDAO.GetInstance.GetCustomerByLastId();
 
-        public void UpdateCustomer(Customer customer) => CustomerDAO.GetInstance().UpdateCustomer(customer);
+        public List<Customer> GetCustomers() => CustomerDAO.GetInstance.GetCustomers();
+
+        public void UpdateCustomer(Customer customer) => CustomerDAO.GetInstance.UpdateCustomer(customer);
     }
 }

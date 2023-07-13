@@ -6,8 +6,9 @@ namespace Repositories.LocationRepo
     {
         List<Location> GetLocations();
         Location GetLocationById(int id);
+        Location GetLocationByLastId();
         void SaveLocation(Location location);
         void UpdateLocation(Location location);
-        //void DeleteLocation(Location location);
+        void DeleteLocation(Location location);
     }
 }
