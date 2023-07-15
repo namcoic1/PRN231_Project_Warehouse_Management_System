@@ -141,6 +141,10 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("int")
                         .HasColumnName("location_id");
 
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("price");
+
                     b.Property<int?>("ProductID")
                         .HasColumnType("int")
                         .HasColumnName("product_id");
@@ -272,6 +276,10 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("description");
 
+                    b.Property<string>("InventoryID")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("inventory_id");
+
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime2")
                         .HasColumnName("last_modified");
@@ -299,6 +307,8 @@ namespace BusinessObjects.Migrations
                         .HasColumnName("user_id");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InventoryID");
 
                     b.HasIndex("TransactionID");
 
@@ -566,6 +576,10 @@ namespace BusinessObjects.Migrations
 
             modelBuilder.Entity("BusinessObjects.Report", b =>
                 {
+                    b.HasOne("BusinessObjects.Inventory", "Inventory")
+                        .WithMany("Reports")
+                        .HasForeignKey("InventoryID");
+
                     b.HasOne("BusinessObjects.Transaction", "Transaction")
                         .WithMany("Reports")
                         .HasForeignKey("TransactionID")
@@ -574,6 +588,8 @@ namespace BusinessObjects.Migrations
                     b.HasOne("BusinessObjects.User", "User")
                         .WithMany("Reports")
                         .HasForeignKey("UserID");
+
+                    b.Navigation("Inventory");
 
                     b.Navigation("Transaction");
 
@@ -651,6 +667,11 @@ namespace BusinessObjects.Migrations
             modelBuilder.Entity("BusinessObjects.Customer", b =>
                 {
                     b.Navigation("Transactions");
+                });
+
+            modelBuilder.Entity("BusinessObjects.Inventory", b =>
+                {
+                    b.Navigation("Reports");
                 });
 
             modelBuilder.Entity("BusinessObjects.Location", b =>

@@ -15,6 +15,9 @@ namespace BusinessObjects
         public int? ProductID { get; set; }
         [Column("quantity")]
         public int? Quantity { get; set; }
+        // add new property
+        [Column("price")]
+        public decimal? Price { get; set; }
         [Column("description")]
         public string? Description { get; set; }
         [Column("status")]
@@ -23,5 +26,7 @@ namespace BusinessObjects
         public DateTime? LastModified { get; set; }
         public virtual Location? Location { get; set; }
         public virtual Product? Product { get; set; }
+        // add new property
+        public virtual ICollection<Report>? Reports { get; set; }
     }
 }

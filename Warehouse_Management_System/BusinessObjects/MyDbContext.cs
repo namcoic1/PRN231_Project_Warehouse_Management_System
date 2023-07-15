@@ -53,25 +53,110 @@ namespace BusinessObjects
         {
             //base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Inventory>(c =>
+            {
+                //c.HasOne(c => c.User)
+                //.WithMany(c => c.Inventories)
+                //.HasForeignKey(c => c.UserId)
+                //.OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.Location)
+                .WithMany(c => c.Inventories)
+                .HasForeignKey(c => c.LocationID);
+
+                c.HasOne(c => c.Product)
+                .WithMany(c => c.Inventories)
+                .HasForeignKey(c => c.ProductID)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
+
             // cascade or setnull
-            // one to one
-            modelBuilder.Entity<User>()
-            .HasOne(e => e.Location)
-            .WithOne(a => a.User)
-            .HasForeignKey<Location>(a => a.UserID);
-            //.OnDelete(DeleteBehavior.SetNull);
+            //modelBuilder.Entity<Location>(c =>
+            //{
+            //    c.HasOne(c => c.User)
+            //    .WithOne(c => c.Location)
+            //    .HasForeignKey<Location>(c => c.UserID)
+            //    .OnDelete(DeleteBehavior.SetNull);
+            //});
 
-            // one to many
-            modelBuilder.Entity<User>()
-            .HasMany(e => e.Users)
-            .WithOne(e => e.Manager)
-            .HasForeignKey(e => e.ReportsTo);
+            modelBuilder.Entity<User>(c =>
+            {
+                c.HasOne(e => e.Role)
+                .WithMany(a => a.Users)
+                .HasForeignKey(a => a.RoleID);
 
-            //modelBuilder.Entity<Inventory>()
-            //    .HasOne(p => p.Product)
-            //    .WithMany(i => i.Inventories)
-            //    .HasForeignKey(i => i.ProductID)
-            //    .OnDelete(DeleteBehavior.Cascade);
+                // one to many
+                c.HasMany(e => e.Users)
+                .WithOne(e => e.Manager)
+                .HasForeignKey(e => e.ReportsTo);
+                //.OnDelete(DeleteBehavior.SetNull);
+
+                // one to one
+                c.HasOne(e => e.Location)
+                .WithOne(a => a.User)
+                .HasForeignKey<Location>(a => a.UserID)
+                .OnDelete(DeleteBehavior.SetNull);
+            });
+
+            modelBuilder.Entity<Product>(c =>
+            {
+                c.HasOne(c => c.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(c => c.CategoryID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.Supplier)
+                .WithMany(c => c.Products)
+                .HasForeignKey(c => c.SupplierID)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<Report>(c =>
+            {
+                c.HasOne(c => c.Inventory)
+                .WithMany(c => c.Reports)
+                .HasForeignKey(c => c.InventoryID);
+
+                c.HasOne(c => c.Transaction)
+                .WithMany(c => c.Reports)
+                .HasForeignKey(c => c.TransactionID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.User)
+                .WithMany(c => c.Reports)
+                .HasForeignKey(c => c.UserID);
+            });
+
+            modelBuilder.Entity<Transaction>(c =>
+            {
+                c.HasOne(c => c.Carrier)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.CarrierID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.Customer)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.CustomerID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.Location)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.LocationID);
+
+                c.HasOne(c => c.Product)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.ProductID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                c.HasOne(c => c.Supplier)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.SupplierID);
+
+                c.HasOne(c => c.User)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(c => c.UserID)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
 
         }
     }

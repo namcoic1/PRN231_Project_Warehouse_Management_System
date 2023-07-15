@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -187,6 +188,7 @@ namespace BusinessObjects.Migrations
                     location_id = table.Column<int>(type: "int", nullable: true),
                     product_id = table.Column<int>(type: "int", nullable: true),
                     quantity = table.Column<int>(type: "int", nullable: true),
+                    price = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     status = table.Column<bool>(type: "bit", nullable: true),
                     last_modified = table.Column<DateTime>(type: "datetime2", nullable: true)
@@ -274,6 +276,7 @@ namespace BusinessObjects.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     user_id = table.Column<int>(type: "int", nullable: true),
                     transaction_id = table.Column<int>(type: "int", nullable: true),
+                    inventory_id = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     report_type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -283,6 +286,11 @@ namespace BusinessObjects.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reports", x => x.report_id);
+                    table.ForeignKey(
+                        name: "FK_Reports_Inventories_inventory_id",
+                        column: x => x.inventory_id,
+                        principalTable: "Inventories",
+                        principalColumn: "inventory_id");
                     table.ForeignKey(
                         name: "FK_Reports_Transactions_transaction_id",
                         column: x => x.transaction_id,
@@ -322,6 +330,11 @@ namespace BusinessObjects.Migrations
                 name: "IX_Products_supplier_id",
                 table: "Products",
                 column: "supplier_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Reports_inventory_id",
+                table: "Reports",
+                column: "inventory_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reports_transaction_id",
@@ -377,10 +390,10 @@ namespace BusinessObjects.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Inventories");
+                name: "Reports");
 
             migrationBuilder.DropTable(
-                name: "Reports");
+                name: "Inventories");
 
             migrationBuilder.DropTable(
                 name: "Transactions");

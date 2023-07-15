@@ -18,8 +18,7 @@ namespace WarehouseMSAPI.Mapper
 
             CreateMap<CustomerDTO, Customer>().ReverseMap();
 
-            CreateMap<Carrier, CarrierDTO>().ReverseMap();
-
+            CreateMap<CarrierDTO, Carrier>().ReverseMap();
 
             CreateMap<Location, LocationDTO>();
 

@@ -6,6 +6,7 @@
         public int? LocationID { get; set; }
         public int? ProductID { get; set; }
         public int? Quantity { get; set; }
+        public decimal? Price { get; set; }
         public string? Description { get; set; }
         public bool? Status { get; set; }
         public DateTime? LastModified { get; set; }
@@ -18,6 +19,7 @@
         public int? LocationID { get; set; }
         public int? ProductID { get; set; }
         public int? Quantity { get; set; }
+        public decimal? Price { get; set; }
         public string? Description { get; set; }
         public bool? Status { get; set; }
         public DateTime? LastModified { get; set; }

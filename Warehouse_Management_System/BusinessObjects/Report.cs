@@ -12,6 +12,9 @@ namespace BusinessObjects
         public int? UserID { get; set; }
         [Column("transaction_id")]
         public int? TransactionID { get; set; }
+        // add new property
+        [Column("inventory_id")]
+        public string? InventoryID { get; set; }
         [Column("name")]
         [StringLength(50)]
         public string? Name { get; set; }
@@ -26,5 +29,7 @@ namespace BusinessObjects
         public DateTime? LastModified { get; set; }
         public virtual User? User { get; set; }
         public virtual Transaction? Transaction { get; set; }
+        // ad new property
+        public virtual Inventory? Inventory { get; set; }
     }
 }
