@@ -25,6 +25,7 @@ namespace DataAccess
         }
 
         public List<Location> GetLocations() => _context.Locations.Include(u => u.User).ToList();
+        public List<Location> GetLocationByUserId(int? id) => _context.Locations.Include(u => u.User).Where(c => c.UserID == id).ToList();
         public Location GetLocationById(int id) => _context.Locations.Include(u => u.User).SingleOrDefault(c => c.Id == id);
         public Location GetLocationByLastId() => _context.Locations.Include(u => u.User).OrderBy(c => c.Id).LastOrDefault();
 

@@ -10,6 +10,11 @@ namespace BusinessObjects
         public int Id { get; set; }
         [Column("role_id")]
         public int? RoleID { get; set; }
+        [Column("user_name")]
+        public string UserName { get; set; }
+        [Column("password")]
+        [StringLength(255, MinimumLength = 8)]
+        public string Password { get; set; }
         [Column("full_name")]
         [StringLength(50)]
         public string? FullName { get; set; }

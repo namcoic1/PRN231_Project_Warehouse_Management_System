@@ -501,6 +501,12 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("notes");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("password");
+
                     b.Property<string>("Picture")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("picture");
@@ -521,6 +527,11 @@ namespace BusinessObjects.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("title");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("user_name");
 
                     b.HasKey("Id");
 

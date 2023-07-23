@@ -1,0 +1,29 @@
+﻿@page
+@model WMSClientApp.Pages.Admin.LocationIndexModel
+@{
+    ViewData["Title"] = "Location Index";
+}
+
+<style>
+    thead input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .columns {
+        cursor: pointer;
+    }
+
+    .button-actions {
+        cursor: pointer;
+    }
+</style>
+
+<div id="list-title">
+</div>
+<div id="list-content">
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/locationAdminIndex.js" asp-append-version="true"></script>

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BusinessObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -9,6 +10,7 @@ using WMSAPI.DTO;
 
 namespace WMSAPI.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     //[Route("api/[controller]")]
     //[ApiController]
     public class CarriersController : ODataController

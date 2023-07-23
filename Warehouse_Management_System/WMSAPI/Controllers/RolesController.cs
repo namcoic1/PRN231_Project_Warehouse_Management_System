@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BusinessObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -9,6 +9,8 @@ using WarehouseMSAPI.DTO;
 
 namespace WMSAPI.Controllers
 {
+    // authenticate and authorize
+    [Authorize(Roles = "ADMIN")]
     //    [Route("api/[controller]")]
     //    [ApiController]
     //    public class RolesController : ControllerBase
@@ -41,54 +43,56 @@ namespace WMSAPI.Controllers
 
             return Ok(role);
         }
-        [EnableQuery]
-        public IActionResult Post([FromBody] RoleDTO roleRequest)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
-            var role = Mapper.Map<Role>(roleRequest);
-            repository.SaveRole(role);
+        // do not to cud role
+        //[EnableQuery]
+        //public IActionResult Post([FromBody] RoleDTO roleRequest)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            //return NoContent();
-            return Ok(Mapper.Map<RoleDTO>(repository.GetRoleByLastId()));
-        }
-        [EnableQuery]
-        public IActionResult Put([FromODataUri] int key, [FromBody] RoleDTO roleRequest)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //    var role = Mapper.Map<Role>(roleRequest);
+        //    repository.SaveRole(role);
 
-            var _role = repository.GetRoleById(key);
-            var role = Mapper.Map<Role>(roleRequest);
+        //    //return NoContent();
+        //    return Ok(Mapper.Map<RoleDTO>(repository.GetRoleByLastId()));
+        //}
+        //[EnableQuery]
+        //public IActionResult Put([FromODataUri] int key, [FromBody] RoleDTO roleRequest)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (_role == null || role.Id != key)
-            {
-                return new NotFoundResult();
-            }
+        //    var _role = repository.GetRoleById(key);
+        //    var role = Mapper.Map<Role>(roleRequest);
 
-            repository.UpdateRole(role);
+        //    if (_role == null || role.Id != key)
+        //    {
+        //        return new NotFoundResult();
+        //    }
 
-            return Ok(Mapper.Map<RoleDTO>(repository.GetRoleById(key)));
-        }
-        [EnableQuery]
-        public IActionResult Delete([FromODataUri] int key)
-        {
-            var role = repository.GetRoleById(key);
-            var roleResponse = Mapper.Map<RoleDTO>(role);
+        //    repository.UpdateRole(role);
 
-            if (role == null)
-            {
-                return new NotFoundResult();
-            }
+        //    return Ok(Mapper.Map<RoleDTO>(repository.GetRoleById(key)));
+        //}
+        //[EnableQuery]
+        //public IActionResult Delete([FromODataUri] int key)
+        //{
+        //    var role = repository.GetRoleById(key);
+        //    var roleResponse = Mapper.Map<RoleDTO>(role);
 
-            repository.DeleteRole(role);
+        //    if (role == null)
+        //    {
+        //        return new NotFoundResult();
+        //    }
 
-            return Ok(roleResponse);
-        }
+        //    repository.DeleteRole(role);
+
+        //    return Ok(roleResponse);
+        //}
     }
 }

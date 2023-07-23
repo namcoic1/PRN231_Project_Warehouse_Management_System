@@ -28,6 +28,8 @@ namespace WarehouseMSAPI.Mapper
 
             CreateMap<UserRequestDTO, User>().ReverseMap();
 
+            CreateMap<UserLoginDTO, User>().ReverseMap();
+
             CreateMap<Product, ProductDTO>();
 
             CreateMap<ProductRequestDTO, Product>().ReverseMap();

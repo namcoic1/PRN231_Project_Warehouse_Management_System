@@ -9,6 +9,8 @@ namespace Repositories.TransactionRepo
 
         public void DeleteTransaction(Transaction transaction) => TransactionDAO.GetInstance.DeleteTransaction(transaction);
 
+        public List<Transaction> GetTransactionsByUserId(int? id) => TransactionDAO.GetInstance.GetTransactionsByUserId(id);
+
         public Transaction GetTransactionById(int id) => TransactionDAO.GetInstance.GetTransactionById(id);
 
         public Transaction GetTransactionByLastId() => TransactionDAO.GetInstance.GetTransactionByLastId();

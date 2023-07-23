@@ -30,10 +30,8 @@ namespace DataAccess
             //.Include(c => c.Transaction).ThenInclude(c => c.Location)
             //.Include(c => c.Transaction).ThenInclude(c => c.Product)
             .ToList();
-        public Report GetReportById(int id) => _context.Reports.Include(c => c.User).Include(c => c.Transaction).Include(c => c.Inventory)
-            .SingleOrDefault(c => c.Id == id);
-        public Report GetReportByLastId() => _context.Reports.Include(c => c.User).Include(c => c.Transaction).Include(c => c.Inventory)
-            .OrderBy(c => c.Id).LastOrDefault();
+        public Report GetReportById(int id) => _context.Reports.Include(c => c.User).Include(c => c.Transaction).Include(c => c.Inventory).SingleOrDefault(c => c.Id == id);
+        public Report GetReportByLastId() => _context.Reports.Include(c => c.User).Include(c => c.Transaction).Include(c => c.Inventory).OrderBy(c => c.Id).LastOrDefault();
 
         public void SaveReport(Report report)
         {

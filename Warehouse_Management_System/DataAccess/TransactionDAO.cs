@@ -25,6 +25,8 @@ namespace DataAccess
 
         public List<Transaction> GetTransactions() => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
             .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).ToList();
+        public List<Transaction> GetTransactionsByUserId(int? id) => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
+            .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).Where(c => c.UserID == id).ToList();
         public Transaction GetTransactionById(int id) => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)
             .Include(c => c.Supplier).Include(c => c.User).Include(c => c.Location).Include(c => c.Product).SingleOrDefault(c => c.Id == id);
         public Transaction GetTransactionByLastId() => _context.Transactions.Include(c => c.Customer).Include(c => c.Carrier)

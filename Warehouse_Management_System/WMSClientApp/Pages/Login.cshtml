@@ -1,0 +1,31 @@
+﻿@page
+@model WMSClientApp.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="w-50 mx-auto my-5">
+    <form id="loginForm">
+        <h5 class="text-center mb-3" style="font-weight:bold; color:blue;">Warehouse Login</h5>
+        <p id="message"></p>
+        <div class="mb-2 form-">
+            <label for="inputName" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputName" placeholder="username" required>
+        </div>
+        <div class="mb-2">
+            <label for="inputPassword" class="form-label">Password</label>
+            <div class="d-flex">
+                <input type="password" class="form-control" id="inputPassword" placeholder="password" required>
+                <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon"></span>
+            </div>
+        </div>
+        <div class="mb-2 form-check">
+            <input type="checkbox" class="form-check-input remember" id="inputCheck" value="checked">
+            <label class="form-check-label" for="inputCheck">Remember me</label>
+        </div>
+        <button type="submit" id="button-submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/login.js" asp-append-version="true"></script>

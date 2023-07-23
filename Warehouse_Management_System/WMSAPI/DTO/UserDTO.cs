@@ -7,6 +7,8 @@ namespace WMSAPI.DTO
     {
         public int Id { get; set; }
         public int? RoleID { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
         public string? FullName { get; set; }
         public string? Title { get; set; }
         public int? Gender { get; set; }
@@ -27,6 +29,9 @@ namespace WMSAPI.DTO
     {
         public int Id { get; set; }
         public int? RoleID { get; set; }
+        public string UserName { get; set; }
+        [StringLength(255, MinimumLength = 8)]
+        public string Password { get; set; }
         [StringLength(50)]
         public string? FullName { get; set; }
         [StringLength(50)]
@@ -42,5 +47,16 @@ namespace WMSAPI.DTO
         public int? ReportsTo { get; set; }
         public bool? Status { get; set; }
         public DateTime? LastModified { get; set; }
+    }
+    public class UserLoginDTO
+    {
+        public string UserName { get; set; } = String.Empty;
+        public string Password { get; set; } = String.Empty;
+    }
+    public class TokenDTO
+    {
+        public string Token { get; set; } = String.Empty;
+        public string RefreshToken { get; set; } = String.Empty;
+        public DateTime ValidTo { get; set; }
     }
 }

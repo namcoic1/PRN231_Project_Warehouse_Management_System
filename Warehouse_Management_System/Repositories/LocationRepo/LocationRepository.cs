@@ -9,6 +9,8 @@ namespace Repositories.LocationRepo
 
         public void DeleteLocation(Location location) => LocationDAO.GetInstance.DeleteLocation(location);
 
+        public List<Location> GetLocationByUserId(int? id) => LocationDAO.GetInstance.GetLocationByUserId(id);
+
         public Location GetLocationById(int id) => LocationDAO.GetInstance.GetLocationById(id);
 
         public Location GetLocationByLastId() => LocationDAO.GetInstance.GetLocationByLastId();

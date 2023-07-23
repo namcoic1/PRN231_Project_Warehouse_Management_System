@@ -28,6 +28,7 @@ namespace DataAccess
         public Role GetRoleById(int id) => _context.Roles.SingleOrDefault(c => c.Id == id);
         public Role GetRoleByLastId() => _context.Roles.OrderBy(c => c.Id).LastOrDefault();
 
+        // do not to cud role
         public void SaveRole(Role role)
         {
             try
@@ -53,7 +54,6 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
-        // do not to delete role
         public void DeleteRole(Role role)
         {
             try

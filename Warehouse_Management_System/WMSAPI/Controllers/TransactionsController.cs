@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BusinessObjects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Formatter;
 using Microsoft.AspNetCore.OData.Query;
@@ -9,6 +10,7 @@ using WMSAPI.DTO;
 
 namespace WMSAPI.Controllers
 {
+    [Authorize]
     //[Route("api/[controller]")]
     //[ApiController]
     public class TransactionsController : ODataController
@@ -22,11 +24,20 @@ namespace WMSAPI.Controllers
             repository = new TransactionRepository();
         }
 
+        [Authorize(Roles = "ADMIN")]
         [EnableQuery]
         public ActionResult<List<TransactionDTO>> Get()
         {
             return Ok(Mapper.Map<List<TransactionDTO>>(repository.GetTransactions()));
         }
+        [Authorize(Roles = "EMPLOYEE")]
+        [HttpGet]
+        [Route("api/[controller]/GetAllTransactionsByUser")]
+        public ActionResult<List<TransactionDTO>> GetAllTransactionsByUser(int? id = 2)
+        {
+            return Ok(Mapper.Map<List<TransactionDTO>>(repository.GetTransactionsByUserId(id)));
+        }
+        [Authorize(Roles = "ADMIN, EMPLOYEE")]
         [EnableQuery]
         public ActionResult<TransactionDTO> Get([FromODataUri] int key)
         {
@@ -39,6 +50,7 @@ namespace WMSAPI.Controllers
 
             return Ok(transaction);
         }
+        [Authorize(Roles = "ADMIN, EMPLOYEE")]
         [EnableQuery]
         public IActionResult Post([FromBody] TransactionRequestDTO transactionRequest)
         {
@@ -52,6 +64,7 @@ namespace WMSAPI.Controllers
 
             return Ok(Mapper.Map<TransactionRequestDTO>(repository.GetTransactionByLastId()));
         }
+        [Authorize(Roles = "ADMIN, EMPLOYEE")]
         [EnableQuery]
         public IActionResult Put([FromODataUri] int key, [FromBody] TransactionRequestDTO transactionRequest)
         {
@@ -72,6 +85,7 @@ namespace WMSAPI.Controllers
 
             return Ok(Mapper.Map<TransactionRequestDTO>(repository.GetTransactionById(key)));
         }
+        [Authorize(Roles = "ADMIN")]
         [EnableQuery]
         public IActionResult Delete([FromODataUri] int key)
         {

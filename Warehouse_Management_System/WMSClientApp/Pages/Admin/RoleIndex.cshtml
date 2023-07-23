@@ -1,0 +1,41 @@
+﻿@page
+@model WMSClientApp.Pages.Admin.RoleIndexModel
+@{
+    ViewData["Title"] = "Role Index";
+}
+
+@*config data table fee*@
+@*<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/6.4.0/default/default-main.css" />
+<script src="https://kendo.cdn.telerik.com/2023.2.606/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.2.606/js/jszip.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/202Last Modified3.2.606/js/kendo.all.min.js"></script>
+<script src="~/js/kendo-ui-license.js" asp-append-version="true"></script>*@
+@*config data table fee*@
+
+<style>
+    thead input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    td.highlight {
+        background-color: whitesmoke !important;
+    }
+
+    html.dark td.highlight {
+        background-color: rgba(var(--dt-row-hover), 0.082) !important;
+    }
+
+    .columns {
+        cursor: pointer;
+    }
+</style>
+
+<div id="list-title">
+</div>
+<div id="list-content">
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/roleIndex.js" asp-append-version="true"></script>

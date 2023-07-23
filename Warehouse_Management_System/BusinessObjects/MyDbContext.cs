@@ -51,6 +51,7 @@ namespace BusinessObjects
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //fluent API
             //base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Inventory>(c =>
