@@ -55,7 +55,7 @@ namespace WMSAPI.Controllers
             return Ok(Mapper.Map<CategoryDTO>(repository.GetCategoryByLastId()));
         }
         [EnableQuery]
-        public IActionResult Put([FromODataUri] int key, [FromBody] CategoryDTO categoryRequest)
+        public IActionResult Put([FromRoute] int key, [FromBody] CategoryDTO categoryRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -75,7 +75,8 @@ namespace WMSAPI.Controllers
             return Ok(Mapper.Map<CategoryDTO>(repository.GetCategoryById(key)));
         }
         [EnableQuery]
-        public IActionResult Delete([FromODataUri] int key)
+        //public IActionResult Delete([FromODataUri] int key)
+        public IActionResult Delete([FromRoute] int key)
         {
             var category = repository.GetCategoryById(key);
             var categoryResponse = Mapper.Map<CategoryDTO>(category);

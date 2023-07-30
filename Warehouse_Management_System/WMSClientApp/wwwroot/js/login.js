@@ -1,7 +1,43 @@
 ﻿
+var content;
+
+$body = $("body");
+$(document).on({
+    ajaxStart: function () { $body.addClass("loading"); },
+    ajaxStop: function () { $body.removeClass("loading"); }
+});
+
 $(document).ready(function () {
 
     $('#message').html('');
+
+    if (!localStorage.getItem('token')) {
+        content = `<form id="loginForm">
+        <h5 class="text-center mb-3" style="font-weight:bold; color:blue;">Warehouse Login</h5>
+        <p id="message"></p>
+        <div class="mb-2">
+            <label for="inputName" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputName" placeholder="username" required>
+        </div>
+        <div class="mb-2">
+            <label for="inputPassword" class="form-label">Password</label>
+            <div class="d-flex">
+                <input type="password" class="form-control" id="inputPassword" placeholder="password" required>
+                <span id="toggle-password" toggle="#password-field" class="fa fa-fw fa-eye field_icon"></span>
+            </div>
+        </div>
+        <div class="mb-2 form-check">
+            <input type="checkbox" class="form-check-input remember" id="inputCheck" value="checked">
+            <label class="form-check-label" for="inputCheck">Remember me</label>
+        </div>
+        <button type="submit" id="button-submit" class="btn btn-primary">Login</button>
+    </form>`;
+    }
+    else {
+        content = ``;
+        window.location.href = "/Error";
+    }
+    $('.login-content').html(content);
 
     // save info user if remember
     if (localStorage.getItem('userInfo')) {
@@ -47,6 +83,9 @@ function getToken(userInfo) {
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(userInfo),
+        beforeSend: function (request) {
+            $('.modals').show();
+        },
         success: function (result, status, xhr) {
             var sessionObject = {
                 expiresAt: result.validTo
@@ -61,14 +100,14 @@ function getToken(userInfo) {
                     $('#message').css("color", "green");
                     setTimeout(function () {
                         window.location.href = '/Main';
-                    }, 1000);
+                    }, 2000);
                 }
                 else {
                     $('#message').html('Username or password is not valid.');
                     $('#message').css("color", "red");
                     setTimeout(function () {
                         window.location.reload(true);
-                    }, 1000);
+                    }, 2000);
                 }
             }
             else {
@@ -80,16 +119,21 @@ function getToken(userInfo) {
                     $('#message').css("color", "green");
                     setTimeout(function () {
                         window.location.href = '/Main';
-                    }, 1000);
+                    }, 2000);
                 }
                 else {
                     $('#message').html('Username or password is not valid.');
                     $('#message').css("color", "red");
                     setTimeout(function () {
                         window.location.reload(true);
-                    }, 1000);
+                    }, 2000);
                 }
             }
+        },
+        complete: function () {
+            setTimeout(function () {
+                $('.modals').hide();
+            }, 2000);
         },
         error: function (xhr, status, error) {
         }

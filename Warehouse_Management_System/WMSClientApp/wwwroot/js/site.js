@@ -20,13 +20,13 @@ $(document).ready(function () {
 });
 
 //show or hide navi
-$(window).on('load', function () {
-    $('.dropdown').hover(function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-    }, function () {
-        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-    });
-});
+//$(window).on('load', function () {
+//$('.dropdown').hover(function () {
+//    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+//}, function () {
+//    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+//});
+//});
 
 //reload page when no action and refresh token
 $(document.body).bind("mousemove keypress", function (e) {
@@ -58,15 +58,15 @@ function showNavi() {
                                     <li><a class="dropdown-item" href="/Admin/UserIndex">User</a></li>
                                     <li><a class="dropdown-item" href="/Admin/CategoryIndex">Category</a></li>
                                     <li><a class="dropdown-item" href="/Admin/SupplierIndex">Supplier</a></li>
+                                    <li><a class="dropdown-item" href="/Admin/CustomerIndex">Customer</a></li>
+                                    <li><a class="dropdown-item" href="/Admin/CarrierIndex">Carrier</a></li>
                                     <li><a class="dropdown-item" href="/Admin/LocationIndex">Location</a></li>
                                     <li><a class="dropdown-item" href="/Admin/ProductIndex">Product</a></li>
                                     <li><a class="dropdown-item" href="/Admin/InventoryIndex">Inventory</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/CustomerIndex">Customer</a></li>
-                                    <li><a class="dropdown-item" href="/Admin/CarrierIndex">Carrier</a></li>
                                     <li><a class="dropdown-item" href="/Admin/TransactionIndex">Transaction</a></li>
                                     <li><a class="dropdown-item" href="/Admin/ReportIndex">Report</a></li>
                                 </ul>
-                                    </div>`;
+                            </div>`;
                 nav_admin.html(content);
             } else if (response.role === 'EMPLOYEE') {
                 content = `<div class="dropdown">

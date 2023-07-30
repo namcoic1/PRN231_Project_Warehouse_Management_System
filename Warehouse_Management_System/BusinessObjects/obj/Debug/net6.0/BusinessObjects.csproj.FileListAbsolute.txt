@@ -1,0 +1,15 @@
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\bin\Debug\net6.0\appsettings.json
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\bin\Debug\net6.0\BusinessObjects.deps.json
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\bin\Debug\net6.0\BusinessObjects.runtimeconfig.json
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\bin\Debug\net6.0\BusinessObjects.dll
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\bin\Debug\net6.0\BusinessObjects.pdb
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.AssemblyReference.cache
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfoInputs.cache
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfo.cs
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.CoreCompileInputs.cache
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.dll
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\refint\BusinessObjects.dll
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
+E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll

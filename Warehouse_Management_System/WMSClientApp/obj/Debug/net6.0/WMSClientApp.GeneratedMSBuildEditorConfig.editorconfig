@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WMSClientApp
+build_property.RootNamespace = WMSClientApp
+build_property.ProjectDir = E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\WMSClientApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\C#\WEB_API_C#\Project\PRN231_Project_Warehouse_Management_System\Warehouse_Management_System\WMSClientApp
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/CarrierIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FycmllckluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/CategoryIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcnlJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/CustomerIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3VzdG9tZXJJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/InventoryIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW52ZW50b3J5SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/LocationIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTG9jYXRpb25JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/ProductIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/ReportIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVwb3J0SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/RoleIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/SupplierIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3VwcGxpZXJJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/TransactionIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVHJhbnNhY3Rpb25JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Admin/UserIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlckluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Employees/LocationIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXExvY2F0aW9uSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Employees/TransactionIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzXFRyYW5zYWN0aW9uSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/C\#/WEB_API_C\#/Project/PRN231_Project_Warehouse_Management_System/Warehouse_Management_System/WMSClientApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3llsz9rwqu

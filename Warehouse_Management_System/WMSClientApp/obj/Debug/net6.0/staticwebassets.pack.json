@@ -1,0 +1,333 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WMSClientApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WMSClientApp.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\ListUsers.js",
+      "PackagePath": "staticwebassets\\js\\ListUsers.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\carrierIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\carrierIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\categoryIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\categoryIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\customerIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\customerIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\inventoryIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\inventoryIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\locationAdminIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\locationAdminIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\productIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\productIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\reportIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\reportIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\roleIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\roleIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\supplierIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\supplierIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\transactionAdminIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\transactionAdminIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\admin\\userIndex.js",
+      "PackagePath": "staticwebassets\\js\\admin\\userIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\employees\\locationEmployeeIndex.js",
+      "PackagePath": "staticwebassets\\js\\employees\\locationEmployeeIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\employees\\transactionEmployeeIndex.js",
+      "PackagePath": "staticwebassets\\js\\employees\\transactionEmployeeIndex.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\kendo-ui-license.js",
+      "PackagePath": "staticwebassets\\js\\kendo-ui-license.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\C#\\WEB_API_C#\\Project\\PRN231_Project_Warehouse_Management_System\\Warehouse_Management_System\\WMSClientApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WMSClientApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WMSClientApp.props",
+      "PackagePath": "build\\WMSClientApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WMSClientApp.props",
+      "PackagePath": "buildMultiTargeting\\WMSClientApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WMSClientApp.props",
+      "PackagePath": "buildTransitive\\WMSClientApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

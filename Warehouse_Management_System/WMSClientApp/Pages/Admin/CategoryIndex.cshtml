@@ -20,10 +20,109 @@
     }
 </style>
 
+<!--Modal Add Category-->
+<div class="modal" id="add-category-modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <form id="myForm" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload(true)"></button>
+                </div>
+                <div class="modal-body row">
+                    <p id="add-message"></p>
+                    <div>
+                        <label class="col-form-label-sm">Category Name</label>
+                        <input id="add-name" class="form-control form-control-sm" type="text" />
+                        @*<span class="text-danger small"></span>*@
+                    </div>
+                    <div>
+                        <label class="col-form-label-sm">Status</label>
+                        <select id="add-status" class="form-select form-select-sm">
+                            <optgroup label="Choose status">
+                                <option value="true">Active</option>
+                                <option value="false">Block</option>
+                            </optgroup>
+                        </select>
+                        @*<span class="text-danger small"></span>*@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" onclick="window.location.reload(true)">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="modalAddSubmitForm()">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Modal Edit Category-->
+<div class="modal" id="edit-category-modal" tabindex="-2" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload(true)"></button>
+            </div>
+            <div class="modal-body row">
+                <p id="update-message"></p>
+                <div>
+                    <input id="edit-id" class="form-control form-control-sm" hidden />
+                </div>
+                <div>
+                    <label class="col-form-label-sm">Category Name</label>
+                    <input id="edit-name" class="form-control form-control-sm" type="text" />
+                </div>
+                <div>
+                    <label class="col-form-label-sm">Status</label>
+                    <select id="edit-status" class="form-select form-select-sm">
+                        <optgroup label="Choose status">
+                            <option value="true">Active</option>
+                            <option value="false">Block</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" onclick="window.location.reload(true)">Close</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="modalEditSubmitForm()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal Delete Category-->
+<div class="modal" id="delete-category-modal" tabindex="-3" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload(true)"></button>
+            </div>
+            <div class="modal-body row">
+                <h6>Do you want to delete category <span id="id" hidden></span><span id="name"></span>?</h6>
+                <p id="delete-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" onclick="window.location.reload(true)">Close</button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="modalDeleteSubmit()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="list-title">
 </div>
 <div id="list-content">
 </div>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/js/categoryIndex.js" asp-append-version="true"></script>
+<div class='progress' id='preLoaderBar'>
+    <div class='indeterminate' />
+</div>
+
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/admin/categoryIndex.js" asp-append-version="true"></script>*@
+
+@section scripts{
+    <script src="~/js/admin/categoryIndex.js"></script>
+}
